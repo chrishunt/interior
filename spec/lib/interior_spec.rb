@@ -2,42 +2,10 @@ require 'spec_helper.rb'
 require 'interior.rb'
 
 describe Interior::Geocoder do
-  before :all do
-    @coder = Interior::Geocoder
-  end
+  let(:coder) { Interior::Geocoder }
 
   describe '#get_lat_lon' do
-    subject do
-      @coder.get_lat_lon(st, me, to, to_dir, ra, ra_dir, se)
-    end
-
-    let (:st)     { nil }
-    let (:me)     { nil }
-    let (:to)     { nil }
-    let (:to_dir) { nil }
-    let (:ra)     { nil }
-    let (:ra_dir) { nil }
-    let (:se)     { nil }
-
-    it 'returns a hash' do
-      subject.class.should == Hash
-    end
-
-    it 'returns a collection of size 2' do
-      subject.size.should == 2
-    end
-
-    it 'returns collection with key :lat' do
-      subject.keys.include?(:lat).should == true
-    end
-
-    it 'returns collection with key :lon' do
-      subject.keys.include?(:lon).should == true
-    end
-
-    it 'returns float values' do
-      subject.values.each { |v| v.class.should == Float }
-    end
+    subject { coder.get_lat_lon(st, me, to, to_dir, ra, ra_dir, se) }
 
     context 'when in Arizona' do
       let (:st)     { 'AZ' }
@@ -48,7 +16,7 @@ describe Interior::Geocoder do
       let (:ra_dir) {  'E' }
       let (:se)     {  35  }
 
-      it 'returns correct latitude and longitude for Arizona' do
+      it 'returns correct latitude and longitude' do
         subject.should == { :lat => 33.384549272498, :lon => -112.228362739723 }
       end
     end
@@ -62,16 +30,14 @@ describe Interior::Geocoder do
       let (:ra_dir) {  'W' }
       let (:se)     {  16  }
 
-      it 'returns correct latitude and longitude for Colorado' do
+      it 'returns correct latitude and longitude' do
         subject.should == { :lat => 39.9648046692517 , :lon => -105.006276849858 }
       end
     end
   end
 
   describe '#build_trs_param' do
-    subject do
-      @coder.send(:build_trs_param, st, me, to, to_dir, ra, ra_dir, se)
-    end
+    subject { coder.send(:build_trs_param, st, me, to, to_dir, ra, ra_dir, se) }
 
     context 'when in Arizona' do
       let (:st)     { 'AZ' }
@@ -116,25 +82,52 @@ describe Interior::Geocoder do
     end
   end
 
-  describe '#get_xml_body' do
-    let(:trs) { "AZ,14,1,0,N,1,0,E,0,,0" }
-
+  describe '#get_response_body' do
     subject do
+      trs = "AZ,14,1,0,N,1,0,E,0,,0"
       response = double('response', :body => body)
       Net::HTTP.stub(:get_response => response)
-      @coder.send(:get_xml_body, trs)
+      coder.send(:get_response_body, trs)
     end
 
     context 'when the response contains a body' do
-      let(:body) { 'xml_body' }
+      let(:body) { 'response_body' }
 
       it 'returns the body' do
-        subject.should == 'xml_body'
+        subject.should == 'response_body'
       end
     end
 
     context 'when the response does not contain a body' do
       let(:body) { nil }
+
+      it 'returns nil' do
+        subject.should == nil
+      end
+    end
+  end
+
+  describe '#parse_xml' do
+    subject { coder.send(:parse_xml, xml) }
+
+    context 'when in Arizona' do
+      let(:xml) { File.open('spec/fixtures/az.xml').read }
+
+      it 'returns the correct latitude and longitude' do
+        subject.should == { :lat => 33.384549272498, :lon => -112.228362739723 }
+      end
+    end
+
+    context 'when in Colorado' do
+      let(:xml) { File.open('spec/fixtures/co.xml').read }
+
+      it 'returns the correct latitude and longitude' do
+        subject.should == { :lat => 39.9648046692517, :lon => -105.006276849858 }
+      end
+    end
+
+    context 'when no xml is provided' do
+      let(:xml) { nil }
 
       it 'returns nil' do
         subject.should == nil

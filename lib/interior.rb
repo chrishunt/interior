@@ -1,5 +1,6 @@
 require 'net/http'
 require 'cgi'
+require 'nokogiri'
 require 'interior/version'
 
 # For detailed documentation on web service API:
@@ -128,7 +129,9 @@ module Interior
     # ra_dir = range_direction
     # se     = section
     def self.get_lat_lon(st, me, to, to_dir, ra, ra_dir, se)
-      { :lat => 33.384549272498, :lon => -112.228362739723 }
+      trs = build_trs_param(st, me, to, to_dir, ra, ra_dir, se)
+      xml = get_response_body(trs)
+      parse_xml(xml)
     end
 
     private
@@ -137,9 +140,22 @@ module Interior
       "#{st},#{me},#{to},0,#{to_dir},#{ra},0,#{ra_dir},#{se ? se : 0},,0"
     end
 
-    def self.get_xml_body(trs)
+    def self.get_response_body(trs)
       uri = URI.parse("http://#{API_DOMAIN}/#{API_PATH}?#{API_PARAM}=#{CGI::escape(trs.to_s)}")
       Net::HTTP.get_response(uri).body
+    end
+
+    def self.parse_xml(xml)
+      begin
+        doc      = Nokogiri::XML(xml)
+        data     = Nokogiri::XML(doc.children[0].children[5].text)
+        points   = data.xpath('//georss:point').first.child.text.split
+        lon, lat = points
+
+        { :lat => lat.to_f, :lon => lon.to_f }
+      rescue
+        nil # if XML is the wrong format, return nil
+      end
     end
   end
 end
