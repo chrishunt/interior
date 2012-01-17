@@ -137,8 +137,9 @@ module Interior
       "#{st},#{me},#{to},0,#{to_dir},#{ra},0,#{ra_dir},#{se ? se : 0},,0"
     end
 
-    def self.get_xml_response(trs)
-      Net::HTTP.get(API_DOMAIN, "#{API_PATH}?#{API_PARAM}=#{CGI::escape(trs.to_s)}")
+    def self.get_xml_body(trs)
+      uri = URI.parse("http://#{API_DOMAIN}/#{API_PATH}?#{API_PARAM}=#{CGI::escape(trs.to_s)}")
+      Net::HTTP.get_response(uri).body
     end
   end
 end

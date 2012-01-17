@@ -1,4 +1,5 @@
 require 'spec_helper.rb'
+require 'interior.rb'
 
 describe Interior::Geocoder do
   before :all do
@@ -115,19 +116,29 @@ describe Interior::Geocoder do
     end
   end
 
-  describe '#get_xml_response' do
-    before :all do
-      Net::HTTP.stub!(:get).and_return('xml_response')
-    end
+  describe '#get_xml_body' do
+    let(:trs) { "AZ,14,1,0,N,1,0,E,0,,0" }
 
     subject do
-      @coder.send(:get_xml_response, trs)
+      response = double('response', :body => body)
+      Net::HTTP.stub(:get_response => response)
+      @coder.send(:get_xml_body, trs)
     end
 
-    let(:trs) { nil }
+    context 'when the response contains a body' do
+      let(:body) { 'xml_body' }
 
-    it 'makes GET request' do
-      subject.should == 'xml_response'
+      it 'returns the body' do
+        subject.should == 'xml_body'
+      end
+    end
+
+    context 'when the response does not contain a body' do
+      let(:body) { nil }
+
+      it 'returns nil' do
+        subject.should == nil
+      end
     end
   end
 end
