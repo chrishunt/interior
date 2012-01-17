@@ -1,15 +1,6 @@
+require 'net/http'
+require 'cgi'
 require 'interior/version'
-
-module Interior
-  class Geocoder
-    API_URL = 'http://www.geocommunicator.gov/TownshipGeocoder/TownshipGeocoder.asmx/GetLatLon'
-    API_PARAM = 'TRS'
-
-    def self.get_lat_lon(state, meridian, township, range, section)
-      { :lat => 33.384549272498, :lon => -112.228362739723 }
-    end
-  end
-end
 
 # For detailed documentation on web service API:
 #   http://goo.gl/rdhsu
@@ -122,3 +113,33 @@ end
 # WV  WV  WEST VIRGINIA
 # WY  06  6TH PM
 # WY  34  WIND RIVER MER
+
+module Interior
+  class Geocoder
+    API_DOMAIN = 'www.geocommunicator.gov'
+    API_PATH   = 'TownshipGeocoder/TownshipGeocoder.asmx/GetLatLon'
+    API_PARAM  = 'TRS'
+
+    # st     = state
+    # me     = meridian
+    # to     = township
+    # to_dir = township direction
+    # ra     = range
+    # ra_dir = range_direction
+    # se     = section
+    def self.get_lat_lon(st, me, to, to_dir, ra, ra_dir, se)
+      { :lat => 33.384549272498, :lon => -112.228362739723 }
+    end
+
+    private
+
+    def self.build_trs_param(st, me, to, to_dir, ra, ra_dir, se = nil)
+      "#{st},#{me},#{to},0,#{to_dir},#{ra},0,#{ra_dir},#{se ? se : 0},,0"
+    end
+
+    def self.get_xml_response(trs)
+      Net::HTTP.get(API_DOMAIN, "#{API_PATH}?#{API_PARAM}=#{CGI::escape(trs.to_s)}")
+    end
+  end
+end
+
