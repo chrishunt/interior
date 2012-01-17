@@ -6,43 +6,58 @@ describe Interior::Geocoder do
   end
 
   describe '#get_lat_lon' do
+    subject do
+      @coder.get_lat_lon(state, meridian, township, range, section)
+    end
+
+    let(:state)    { nil }
+    let(:meridian) { nil }
+    let(:township) { nil }
+    let(:range)    { nil }
+    let(:section)  { nil }
+
     it 'returns a hash' do
-      @coder.get_lat_lon(nil, nil, nil, nil).class.should == Hash
+      subject.class.should == Hash
     end
 
     it 'returns a collection of size 2' do
-      @coder.get_lat_lon(nil, nil, nil, nil).size.should == 2
+      subject.size.should == 2
     end
 
     it 'returns collection with key :lat' do
-      @coder.get_lat_lon(nil, nil, nil, nil).keys.include?(:lat).should == true
+      subject.keys.include?(:lat).should == true
     end
 
     it 'returns collection with key :lon' do
-      @coder.get_lat_lon(nil, nil, nil, nil).keys.include?(:lon).should == true
+      subject.keys.include?(:lon).should == true
     end
 
     it 'returns float values' do
-      result = @coder.get_lat_lon(nil, nil, nil, nil)
-      result.values.each { |v| v.class.should == Float }
+      subject.values.each { |v| v.class.should == Float }
     end
 
-    it 'returns latitude between -90 and 90' do
-      result = @coder.get_lat_lon(14, '1N', '1E', 35)
-      (result[:lat] >= -90).should == true
-      (result[:lat] <=  90).should == true
+    context('when in Arizona') do
+      let(:state)    { 'AZ' }
+      let(:meridian) {  14  }
+      let(:township) { '1N' }
+      let(:range)    { '1E' }
+      let(:section)  {  35  }
+
+      it 'returns correct latitude and longitude for Arizona' do
+        subject.should == { :lat => 33.384549272498, :lon => -112.228362739723 }
+      end
     end
 
-    it 'returns longitude between -180 and 180' do
-      result = @coder.get_lat_lon(14, '1N', '1E', 35)
-      (result[:lon] >= -180).should == true
-      (result[:lon] <=  180).should == true
-    end
+    context('when in Colorado') do
+      let(:state)    { 'CO'  }
+      let(:meridian) {  6    }
+      let(:township) { '1S'  }
+      let(:range)    { '68W' }
+      let(:section)  {  16   }
 
-    it 'correctly maps meridian, township, range, section to lat, lon' do
-      @coder.get_lat_lon(14, '1N', '1E', 35).should == {
-        :lat => 33.384549272498, :lon => -112.228362739723
-      }
+      it 'returns correct latitude and longitude for Colorado' do
+        subject.should == { :lat => 39.9648046692517 , :lon => -105.006276849858 }
+      end
     end
   end
 end

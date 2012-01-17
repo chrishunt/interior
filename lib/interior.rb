@@ -5,7 +5,7 @@ module Interior
     API_URL = 'http://www.geocommunicator.gov/TownshipGeocoder/TownshipGeocoder.asmx/GetLatLon'
     API_PARAM = 'TRS'
 
-    def self.get_lat_lon(meridian, township, range, section)
+    def self.get_lat_lon(state, meridian, township, range, section)
       { :lat => 33.384549272498, :lon => -112.228362739723 }
     end
   end
@@ -16,6 +16,7 @@ end
 #
 # Example:
 #   AZ,14,1,0,N,1,0,E,35,,0
+#   CO,06,001,0,S,068,0,W,016,,0
 #
 # 1  State (CO, UT, WY)
 # 2  Principal Meridian
