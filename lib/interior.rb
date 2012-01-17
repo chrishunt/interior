@@ -1,8 +1,3 @@
-require 'net/http'
-require 'cgi'
-require 'nokogiri'
-require 'interior/version'
-
 # For detailed documentation on web service API:
 #   http://goo.gl/rdhsu
 #
@@ -115,19 +110,24 @@ require 'interior/version'
 # WY  06  6TH PM
 # WY  34  WIND RIVER MER
 
+require 'net/http'
+require 'cgi'
+require 'nokogiri'
+require 'interior/version'
+
 module Interior
   class Geocoder
     API_DOMAIN = 'www.geocommunicator.gov'
     API_PATH   = 'TownshipGeocoder/TownshipGeocoder.asmx/GetLatLon'
     API_PARAM  = 'TRS'
 
-    # st     = state
-    # me     = meridian
-    # to     = township
-    # to_dir = township direction
-    # ra     = range
-    # ra_dir = range_direction
-    # se     = section
+    # st     : state
+    # me     : meridian
+    # to     : township
+    # to_dir : township direction
+    # ra     : range
+    # ra_dir : range_direction
+    # se     : section
     def self.get_lat_lon(st, me, to, to_dir, ra, ra_dir, se)
       trs = build_trs_param(st, me, to, to_dir, ra, ra_dir, se)
       xml = get_response_body(trs)
@@ -159,4 +159,3 @@ module Interior
     end
   end
 end
-
