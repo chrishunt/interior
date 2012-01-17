@@ -113,7 +113,7 @@
 require 'net/http'
 require 'cgi'
 require 'nokogiri'
-require 'interior/version'
+require 'interior/response'
 
 module Interior
   class Geocoder
@@ -131,7 +131,8 @@ module Interior
     def self.get_lat_lon(st, me, to, to_dir, ra, ra_dir, se)
       trs = build_trs_param(st, me, to, to_dir, ra, ra_dir, se)
       xml = get_response_body(trs)
-      parse_xml(xml)
+      result = parse_xml(xml)
+      result ? Interior::Response.new(result[:lat], result[:lon]) : nil
     end
 
     private

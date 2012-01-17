@@ -1,5 +1,5 @@
 require 'spec_helper.rb'
-require 'interior.rb'
+require 'interior/geocoder.rb'
 
 describe Interior::Geocoder do
   let(:coder) { Interior::Geocoder }
@@ -16,22 +16,9 @@ describe Interior::Geocoder do
       let (:ra_dir) {  'E' }
       let (:se)     {  35  }
 
-      it 'returns correct latitude and longitude' do
-        subject.should == { :lat => 33.384549272498, :lon => -112.228362739723 }
-      end
-    end
-
-    context 'when in Colorado' do
-      let (:st)     { 'CO' }
-      let (:me)     {  6   }
-      let (:to)     {  1   }
-      let (:to_dir) {  'S' }
-      let (:ra)     {  68  }
-      let (:ra_dir) {  'W' }
-      let (:se)     {  16  }
-
-      it 'returns correct latitude and longitude' do
-        subject.should == { :lat => 39.9648046692517 , :lon => -105.006276849858 }
+      it 'returns the correct latitude and longitude' do
+        subject.latitude.should  == 33.384549272498
+        subject.longitude.should == -112.228362739723
       end
     end
   end
@@ -84,10 +71,8 @@ describe Interior::Geocoder do
 
   describe '#get_response_body' do
     subject do
-      trs = "AZ,14,1,0,N,1,0,E,0,,0"
-      response = double('response', :body => body)
-      Net::HTTP.stub(:get_response => response)
-      coder.send(:get_response_body, trs)
+      Net::HTTP.stub(:get_response => double('response', :body => body))
+      coder.send(:get_response_body, "AZ,14,1,0,N,1,0,E,0,,0")
     end
 
     context 'when the response contains a body' do
