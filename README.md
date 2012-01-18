@@ -22,6 +22,8 @@ in the state of Arizona with:
     response.latitude   => 33.384549272498
     response.longitude  => -112.228362739723
 
+![Usage Map 1](https://github.com/climate/interior/raw/master/maps/usage_map_01.png "Usage Map 1")
+
 Section is option. If omitted, the centerpoint latitude and longitude will be for
 the township and range:
 
@@ -30,6 +32,8 @@ the township and range:
     response.success?   => true
     response.latitude   => 33.4211630233451
     response.longitude  => -112.254699834217
+
+![Usage Map 2](https://github.com/climate/interior/raw/master/maps/usage_map_02.png "Usage Map 2")
 
 US Meridian Map
 ---------------
