@@ -1,2 +1,2 @@
-require 'lib/interior/response.rb'
-require 'lib/interior/geocoder.rb'
+require 'interior/response.rb'
+require 'interior/geocoder.rb'
