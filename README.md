@@ -24,10 +24,15 @@ Given township `1N`, range `1E`, section `35`, and meridian `14` (see the US Mer
 
     require 'interior'
     response = Interior::Geocoder.get_lat_lon('AZ', 14, 1, 'N', 1, 'E', 35)
-    response.latitude
-      => 33.384549272498
-    response.longitude
-      => -112.228362739723
+    response.latitude    => 33.384549272498
+    response.longitude   => -112.228362739723
+
+Section is option. If omitted, the centerpoint latitude and longitude will be for the township and range:
+
+    require 'interior'
+    response = Interior::Geocoder.get_lat_lon('AZ', 14, 1, 'N', 1, 'E') # No section
+    response.latitude    => 33.4211630233451
+    response.longitude   => -112.254699834217
 
 US Meridian Table
 -----------------
