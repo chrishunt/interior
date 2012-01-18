@@ -83,6 +83,36 @@ describe Interior::Geocoder do
     end
   end
 
+  describe '#get_meridians' do
+    subject { coder.get_meridians(st) }
+
+    it 'returns an array' do
+      subject.class.should == Array
+    end
+
+    context('when in Arizona') do
+      let(:st) { 'AZ' }
+
+      it 'returns the correct collection of meridians' do
+        subject.should == [
+          { :name => "Gila-Salt River", :id => 14 },
+          { :name => "Navajo",          :id => 22 },
+          { :name => "San Bernardino",  :id => 27 } ]
+      end
+    end
+
+    context('when in Colorado') do
+      let(:st) { 'CO' }
+
+      it 'returns the correct collection of meridians' do
+        subject.should == [
+          { :name => '6th',     :id => 6  },
+          { :name => 'New Mex', :id => 23 },
+          { :name => 'Ute',     :id => 31 } ]
+      end
+    end
+  end
+
   describe '#build_trs_param' do
     subject { coder.send(:build_trs_param, st, me, to, to_dir, ra, ra_dir, se) }
 

@@ -10,8 +10,8 @@ Interior uses the GeoCommunicator GeoCoder Web Service provided by the
 [1]: http://www.geocommunicator.gov/GeoComm/lsis_home/townshipdecoder/index.htm "US Department of the Interior"
 [2]: http://www.blm.gov/nils/GeoComm/documents/NILS_GeoCommunicator_Web_Services_TGC_Formats.pdf "Methods, Parameters, and Results PDF"
 
-Usage
------
+Usage: Get Latitude / Longitude
+-------------------------------
 Given township `1N`, range `1E`, section `35`, and meridian `14` (Gila-Salt Meridian
 in the US Meridian table), we can get the center point latitude and longitude
 in the state of Arizona with:
@@ -34,6 +34,17 @@ the township and range:
     response.longitude  => -112.254699834217
 
 ![Usage Map 2](https://github.com/climate/interior/raw/master/maps/usage_map_02.png "Usage Map 2")
+
+Usage: Get Meridians
+--------------------
+For a collection of all meridians in Arizona:
+
+    require 'interior'
+    meridians = Interior::Geocoder.get_meridians('AZ')
+    meridians.inspect
+      => [ { :name => 'Gila-Salt River', :id => 14 },
+           { :name => 'Navajo',          :id => 22 },
+           { :name => 'San Bernardino',  :id => 27 } ]
 
 US Meridian Map
 ---------------

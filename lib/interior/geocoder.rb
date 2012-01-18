@@ -2,9 +2,12 @@ require 'net/http'
 require 'cgi'
 require 'nokogiri'
 require 'interior/response'
+require 'interior/meridians'
 
 module Interior
   class Geocoder
+    include Interior::Meridians
+
     API_DOMAIN = 'www.geocommunicator.gov'
     API_PATH   = 'TownshipGeocoder/TownshipGeocoder.asmx/GetLatLon'
     API_PARAM  = 'TRS'
@@ -21,6 +24,11 @@ module Interior
       xml    = get_response_body(trs)
       result = parse_xml(xml)
       result ? Interior::Response.new(result[:lat], result[:lon], true) : Interior::Response.new
+    end
+
+    # st     : state
+    def self.get_meridians(st)
+      MERIDIANS[st]
     end
 
     private
