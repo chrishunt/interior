@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = Interior::VERSION
   s.authors     = ["Chris Hunt"]
   s.email       = ["chunt@climate.com"]
-  s.homepage    = "http://climate.com"
+  s.homepage    = "https://github.com/climate/interior"
   s.summary     = %q{Convert PLSS to latitude and longitude}
   s.description = %q{Find the center latitude/longitude for any grid in the PLSS given township, range, and section.}
 
