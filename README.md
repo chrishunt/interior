@@ -3,20 +3,12 @@ Interior
 
 Township GeoCoder Web Service
 -----------------------------
-This gem uses the GeoCommunicator GeoCoder Web Service provided by the
+Interior uses the GeoCommunicator GeoCoder Web Service provided by the
 [US Department of the Interior] [1]. For detailed documentation on the web service API, consult the
 [Methods, Parameters, and Results PDF] [2].
 
 [1]: http://www.geocommunicator.gov/GeoComm/lsis_home/townshipdecoder/index.htm "US Department of the Interior"
 [2]: http://www.blm.gov/nils/GeoComm/documents/NILS_GeoCommunicator_Web_Services_TGC_Formats.pdf "Methods, Parameters, and Results PDF"
-
-US Meridian Map
----------------
-The US is divided into several meridians. A [larger map] [3] and table are available for reference.
-
-![USA Meridians](https://github.com/climate/interior/raw/master/maps/meridians_small.jpg "USA Meridians")
-
-[3]: https://github.com/climate/interior/raw/master/maps/meridians.jpg "Larger Map"
 
 Usage
 -----
@@ -33,6 +25,15 @@ Section is option. If omitted, the centerpoint latitude and longitude will be fo
     response = Interior::Geocoder.get_lat_lon('AZ', 14, 1, 'N', 1, 'E') # No section
     response.latitude    => 33.4211630233451
     response.longitude   => -112.254699834217
+
+US Meridian Map
+---------------
+The US is divided into several meridians. A [larger map] [3] and table are available for reference.
+
+![USA Meridians](https://github.com/climate/interior/raw/master/maps/meridians_small.jpg "USA Meridians")
+
+[3]: https://github.com/climate/interior/raw/master/maps/meridians.jpg "Larger Map"
+
 
 US Meridian Table
 -----------------
