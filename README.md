@@ -1,4 +1,4 @@
-Interior
+Interior ![Travis CI Status](https://secure.travis-ci.org/climate/interior.png)
 ========
 
 Township GeoCoder Web Service
