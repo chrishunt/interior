@@ -104,3 +104,15 @@ Each meridian has a corresponding key mapping. Use the table below for reference
     WY  06  6TH PM
     WY  34  WIND RIVER MER
 
+This is a test table:
+
+<table>
+  <tr>
+    <th>One</th>
+    <th>Two</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>2</td>
+  </tr>
+</table>
