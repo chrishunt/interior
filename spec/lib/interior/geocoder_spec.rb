@@ -111,6 +111,14 @@ describe Interior::Geocoder do
           { :name => 'Ute',     :id => 31 } ]
       end
     end
+
+    context('when state cannot be found') do
+      let(:st) { 'INVALID' }
+
+      it 'returns an empty array' do
+        subject.should == []
+      end
+    end
   end
 
   describe '#build_trs_param' do

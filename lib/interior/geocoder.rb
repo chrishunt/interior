@@ -28,7 +28,8 @@ module Interior
 
     # st : state
     def self.get_meridians(st)
-      MERIDIANS[st]
+      merds = MERIDIANS[st]
+      merds ? merds : []
     end
 
     private
