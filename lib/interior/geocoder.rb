@@ -26,7 +26,7 @@ module Interior
       result ? Interior::Response.new(result[:lat], result[:lon], true) : Interior::Response.new
     end
 
-    # st     : state
+    # st : state
     def self.get_meridians(st)
       MERIDIANS[st]
     end
