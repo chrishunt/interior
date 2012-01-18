@@ -18,6 +18,17 @@ The US is divided into several meridians. A [larger map] [3] and table are avail
 
 [3]: https://github.com/climate/interior/raw/master/maps/meridians.jpg "Larger Map"
 
+Usage
+-----
+Given township `1N`, range `1E`, section `35`, and meridian `14` (see the US Meridian table below, this is the Gila-Salt River meridian), we can get the center point latitude and longitude in the state of Arizona with:
+
+    require 'interior'
+    response = Interior::Geocoder.get_lat_lon('AZ', 14, 1, 'N', 1, 'E', 35)
+    response.latitude
+      => 33.384549272498
+    response.longitude
+      => -112.228362739723
+
 US Meridian Table
 -----------------
 Each meridian has a corresponding numeric key mapping:
