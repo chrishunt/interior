@@ -16,7 +16,7 @@ module Interior
     # ra     : range
     # ra_dir : range_direction
     # se     : section
-    def self.get_lat_lon(st, me, to, to_dir, ra, ra_dir, se)
+    def self.get_lat_lon(st, me, to, to_dir, ra, ra_dir, se = nil)
       trs    = build_trs_param(st, me, to, to_dir, ra, ra_dir, se)
       xml    = get_response_body(trs)
       result = parse_xml(xml)
