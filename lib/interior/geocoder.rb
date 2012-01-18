@@ -129,8 +129,8 @@ module Interior
     # ra_dir : range_direction
     # se     : section
     def self.get_lat_lon(st, me, to, to_dir, ra, ra_dir, se)
-      trs = build_trs_param(st, me, to, to_dir, ra, ra_dir, se)
-      xml = get_response_body(trs)
+      trs    = build_trs_param(st, me, to, to_dir, ra, ra_dir, se)
+      xml    = get_response_body(trs)
       result = parse_xml(xml)
       result ? Interior::Response.new(result[:lat], result[:lon]) : nil
     end
@@ -142,7 +142,8 @@ module Interior
     end
 
     def self.get_response_body(trs)
-      uri = URI.parse("http://#{API_DOMAIN}/#{API_PATH}?#{API_PARAM}=#{CGI::escape(trs.to_s)}")
+      url = "http://#{API_DOMAIN}/#{API_PATH}?#{API_PARAM}=#{CGI::escape(trs.to_s)}"
+      uri = URI.parse(url)
       Net::HTTP.get_response(uri).body
     end
 
