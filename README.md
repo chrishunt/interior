@@ -13,7 +13,7 @@ Interior uses the GeoCommunicator GeoCoder Web Service provided by the
 Usage <a id='usage' />
 -----
 Given township `1N`, range `1E`, section `35`, and meridian `14` (Gila-Salt Meridian
-in the [US Meridian table][#table]), we can get the center point latitude and
+in the [US Meridian table](#table)), we can get the center point latitude and
 longitude in the state of Arizona with:
 
     require 'interior'
