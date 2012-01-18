@@ -4,16 +4,16 @@ require 'interior/geocoder.rb'
 describe Interior::Geocoder do
   let(:coder) { Interior::Geocoder }
 
-  # Integration enemy test
-  describe 'api_test' do
-    let(:st)     { 'AZ' }
-    let(:me)     {  14  }
-    let(:to)     {  1   }
-    let(:to_dir) {  'N' }
-    let(:ra)     {  1   }
-    let(:ra_dir) {  'E' }
-    let(:se)     {  35  }
+  let(:st)     { 'AZ' }
+  let(:me)     {  14  }
+  let(:to)     {  1   }
+  let(:to_dir) {  'N' }
+  let(:ra)     {  1   }
+  let(:ra_dir) {  'E' }
+  let(:se)     {  35  }
 
+  # Full integration enemy test
+  describe 'enemy_test', :enemy => true do
     subject do
       coder.get_lat_lon(st, me, to, to_dir, ra, ra_dir, se)
     end
@@ -26,13 +26,6 @@ describe Interior::Geocoder do
   end
 
   describe '#get_lat_lon' do
-    let(:st)     { 'AZ' }
-    let(:me)     {  14  }
-    let(:to)     {  1   }
-    let(:to_dir) {  'N' }
-    let(:ra)     {  1   }
-    let(:ra_dir) {  'E' }
-
     subject do
       # use xml fixtures for interior web service
       Net::HTTP.stub(:get_response => double('response', :body => body))
@@ -40,7 +33,6 @@ describe Interior::Geocoder do
     end
 
     context 'with section' do
-      let(:se)   { 35 }
       let(:body) { File.open('spec/fixtures/az.xml').read }
 
       it 'returns successful response' do
@@ -95,14 +87,6 @@ describe Interior::Geocoder do
     subject { coder.send(:build_trs_param, st, me, to, to_dir, ra, ra_dir, se) }
 
     context 'when in Arizona' do
-      let(:st)     { 'AZ' }
-      let(:me)     {  14  }
-      let(:to)     {  1   }
-      let(:to_dir) {  'N' }
-      let(:ra)     {  1   }
-      let(:ra_dir) {  'E' }
-      let(:se)     {  35  }
-
       it 'returns the correct trs param' do
         subject.should == "AZ,14,1,0,N,1,0,E,35,,0"
       end
@@ -123,13 +107,7 @@ describe Interior::Geocoder do
     end
 
     context 'when missing section' do
-      let(:st)     { 'AZ' }
-      let(:me)     {  14  }
-      let(:to)     {  1   }
-      let(:to_dir) {  'N' }
-      let(:ra)     {  1   }
-      let(:ra_dir) {  'E' }
-      let(:se)     {  nil }
+      let(:se) { nil }
 
       it 'defaults to section 0' do
         subject.should == "AZ,14,1,0,N,1,0,E,0,,0"
