@@ -1,7 +1,7 @@
 Interior
 ========
 
-Township GeoCoder Web Service
+Township GeoCoder Web Service <a id='service' />
 -----------------------------
 Interior uses the GeoCommunicator GeoCoder Web Service provided by the
 [US Department of the Interior] [1]. For detailed documentation on the web service API, consult the
@@ -10,9 +10,11 @@ Interior uses the GeoCommunicator GeoCoder Web Service provided by the
 [1]: http://www.geocommunicator.gov/GeoComm/lsis_home/townshipdecoder/index.htm "US Department of the Interior"
 [2]: http://www.blm.gov/nils/GeoComm/documents/NILS_GeoCommunicator_Web_Services_TGC_Formats.pdf "Methods, Parameters, and Results PDF"
 
-Usage
+Usage <a id='usage' />
 -----
-Given township `1N`, range `1E`, section `35`, and meridian `14` (see the US Meridian table below, this is the Gila-Salt River meridian), we can get the center point latitude and longitude in the state of Arizona with:
+Given township `1N`, range `1E`, section `35`, and meridian `14` (Gila-Salt Meridian
+in the [US Meridian table][#table]), we can get the center point latitude and
+longitude in the state of Arizona with:
 
     require 'interior'
     response = Interior::Geocoder.get_lat_lon('AZ', 14, 1, 'N', 1, 'E', 35)
@@ -20,7 +22,8 @@ Given township `1N`, range `1E`, section `35`, and meridian `14` (see the US Mer
     response.latitude   => 33.384549272498
     response.longitude  => -112.228362739723
 
-Section is option. If omitted, the centerpoint latitude and longitude will be for the township and range:
+Section is option. If omitted, the centerpoint latitude and longitude will be for
+the township and range:
 
     require 'interior'
     response = Interior::Geocoder.get_lat_lon('AZ', 14, 1, 'N', 1, 'E') # No section
@@ -28,7 +31,7 @@ Section is option. If omitted, the centerpoint latitude and longitude will be fo
     response.latitude   => 33.4211630233451
     response.longitude  => -112.254699834217
 
-US Meridian Map
+US Meridian Map <a id='map' />
 ---------------
 The US is divided into several meridians. A [larger map] [3] and table are available for reference.
 
@@ -37,7 +40,7 @@ The US is divided into several meridians. A [larger map] [3] and table are avail
 [3]: https://github.com/climate/interior/raw/master/maps/meridians.jpg "Larger Map"
 
 
-US Meridian Table
+US Meridian Table <a id='table' />
 -----------------
 Each meridian has a corresponding numeric key mapping:
 
