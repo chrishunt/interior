@@ -7,9 +7,9 @@ Gem::Specification.new do |s|
   s.version     = Interior::VERSION
   s.authors     = ["Chris Hunt"]
   s.email       = ["chunt@climate.com"]
-  s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.homepage    = "climate.com"
+  s.summary     = %q{Convert PLSS to latitude and longitude}
+  s.description = %q{Find the center latitude/longitude for any grid in the PLSS given township, range, and section.}
 
   s.rubyforge_project = "interior"
 
@@ -18,8 +18,8 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  # specify any dependencies here; for example:
   s.add_development_dependency "rspec"
   s.add_development_dependency "ruby-debug"
+
   s.add_runtime_dependency "nokogiri"
 end
