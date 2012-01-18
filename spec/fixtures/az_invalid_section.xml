@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TownshipGeocoderResult xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.esri.com/">
+  <CompletionStatus>false</CompletionStatus>
+  <Message>Invalid Township,Range,Section... specified: AZ,14,1,0,N,1,0,E,INVALID,,0</Message>
+</TownshipGeocoderResult>

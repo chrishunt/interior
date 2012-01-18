@@ -4,59 +4,88 @@ require 'interior/geocoder.rb'
 describe Interior::Geocoder do
   let(:coder) { Interior::Geocoder }
 
-  describe '#get_lat_lon' do
-    let (:st)     { 'AZ' }
-    let (:me)     {  14  }
-    let (:to)     {  1   }
-    let (:to_dir) {  'N' }
-    let (:ra)     {  1   }
-    let (:ra_dir) {  'E' }
-    let (:se)     {  35  }
+  # Integration enemy test
+  describe 'api_test' do
+    let(:st)     { 'AZ' }
+    let(:me)     {  14  }
+    let(:to)     {  1   }
+    let(:to_dir) {  'N' }
+    let(:ra)     {  1   }
+    let(:ra_dir) {  'E' }
+    let(:se)     {  35  }
 
-    subject { coder.get_lat_lon(st, me, to, to_dir, ra, ra_dir, se) }
+    subject do
+      coder.get_lat_lon(st, me, to, to_dir, ra, ra_dir, se)
+    end
+
+    it 'returns correct response' do
+      subject.success?.should  == true
+      subject.latitude.should  == 33.384549272498
+      subject.longitude.should == -112.228362739723
+    end
+  end
+
+  describe '#get_lat_lon' do
+    let(:st)     { 'AZ' }
+    let(:me)     {  14  }
+    let(:to)     {  1   }
+    let(:to_dir) {  'N' }
+    let(:ra)     {  1   }
+    let(:ra_dir) {  'E' }
+
+    subject do
+      # use xml fixtures for interior web service
+      Net::HTTP.stub(:get_response => double('response', :body => body))
+      coder.get_lat_lon(st, me, to, to_dir, ra, ra_dir, se)
+    end
 
     context 'with section' do
+      let(:se)   { 35 }
+      let(:body) { File.open('spec/fixtures/az.xml').read }
+
       it 'returns successful response' do
         subject.success?.should == true
       end
 
-      it 'response contains correct latitude' do
+      it 'returns correct latitude' do
         subject.latitude.should  == 33.384549272498
       end
 
-      it 'response contains correct longitude' do
+      it 'returns correct longitude' do
         subject.longitude.should == -112.228362739723
       end
     end
 
     context 'without section' do
-      let (:se) { nil }
+      let(:se)   { nil }
+      let(:body) { File.open('spec/fixtures/az_no_section.xml').read }
 
       it 'returns successful response' do
         subject.success?.should == true
       end
 
-      it 'response contains correct latitude' do
+      it 'returns correct latitude' do
         subject.latitude.should  == 33.4211630233451
       end
 
-      it 'response contains correct longitude' do
+      it 'returns correct longitude' do
         subject.longitude.should == -112.254699834217
       end
     end
 
     context 'with invalid parameters' do
-      let (:st) { 'INVALID' }
+      let(:se)   { 'INVALID' }
+      let(:body) { File.open('spec/fixtures/az_invalid_section.xml').read }
 
       it 'returns unsuccessful response' do
         subject.success?.should == false
       end
 
-      it 'response contains nil for latitude' do
+      it 'returns nil for latitude' do
         subject.latitude.should  == nil
       end
 
-      it 'response contains nil for longitude' do
+      it 'returns nil for longitude' do
         subject.longitude.should == nil
       end
     end
@@ -66,13 +95,13 @@ describe Interior::Geocoder do
     subject { coder.send(:build_trs_param, st, me, to, to_dir, ra, ra_dir, se) }
 
     context 'when in Arizona' do
-      let (:st)     { 'AZ' }
-      let (:me)     {  14  }
-      let (:to)     {  1   }
-      let (:to_dir) {  'N' }
-      let (:ra)     {  1   }
-      let (:ra_dir) {  'E' }
-      let (:se)     {  35  }
+      let(:st)     { 'AZ' }
+      let(:me)     {  14  }
+      let(:to)     {  1   }
+      let(:to_dir) {  'N' }
+      let(:ra)     {  1   }
+      let(:ra_dir) {  'E' }
+      let(:se)     {  35  }
 
       it 'returns the correct trs param' do
         subject.should == "AZ,14,1,0,N,1,0,E,35,,0"
@@ -80,13 +109,13 @@ describe Interior::Geocoder do
     end
 
     context 'when in Colorado' do
-      let (:st)     { 'CO' }
-      let (:me)     {  06  }
-      let (:to)     {  1   }
-      let (:to_dir) {  'S' }
-      let (:ra)     {  68  }
-      let (:ra_dir) {  'W' }
-      let (:se)     {  16  }
+      let(:st)     { 'CO' }
+      let(:me)     {  06  }
+      let(:to)     {  1   }
+      let(:to_dir) {  'S' }
+      let(:ra)     {  68  }
+      let(:ra_dir) {  'W' }
+      let(:se)     {  16  }
 
       it 'returns the correct trs param' do
         subject.should == "CO,6,1,0,S,68,0,W,16,,0"
@@ -94,13 +123,13 @@ describe Interior::Geocoder do
     end
 
     context 'when missing section' do
-      let (:st)     { 'AZ' }
-      let (:me)     {  14  }
-      let (:to)     {  1   }
-      let (:to_dir) {  'N' }
-      let (:ra)     {  1   }
-      let (:ra_dir) {  'E' }
-      let (:se)     {  nil }
+      let(:st)     { 'AZ' }
+      let(:me)     {  14  }
+      let(:to)     {  1   }
+      let(:to_dir) {  'N' }
+      let(:ra)     {  1   }
+      let(:ra_dir) {  'E' }
+      let(:se)     {  nil }
 
       it 'defaults to section 0' do
         subject.should == "AZ,14,1,0,N,1,0,E,0,,0"
