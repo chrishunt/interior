@@ -11,14 +11,20 @@ describe Interior::Geocoder do
     let (:to_dir) {  'N' }
     let (:ra)     {  1   }
     let (:ra_dir) {  'E' }
+    let (:se)     {  35  }
 
     subject { coder.get_lat_lon(st, me, to, to_dir, ra, ra_dir, se) }
 
     context 'with section' do
-      let (:se) { 35 }
+      it 'returns successful response' do
+        subject.success?.should == true
+      end
 
-      it 'returns the correct latitude and longitude' do
+      it 'response contains correct latitude' do
         subject.latitude.should  == 33.384549272498
+      end
+
+      it 'response contains correct longitude' do
         subject.longitude.should == -112.228362739723
       end
     end
@@ -26,9 +32,32 @@ describe Interior::Geocoder do
     context 'without section' do
       let (:se) { nil }
 
-      it 'returns the correct latitude and longitude' do
+      it 'returns successful response' do
+        subject.success?.should == true
+      end
+
+      it 'response contains correct latitude' do
         subject.latitude.should  == 33.4211630233451
+      end
+
+      it 'response contains correct longitude' do
         subject.longitude.should == -112.254699834217
+      end
+    end
+
+    context 'with invalid parameters' do
+      let (:st) { 'INVALID' }
+
+      it 'returns unsuccessful response' do
+        subject.success?.should == false
+      end
+
+      it 'response contains nil for latitude' do
+        subject.latitude.should  == nil
+      end
+
+      it 'response contains nil for longitude' do
+        subject.longitude.should == nil
       end
     end
   end

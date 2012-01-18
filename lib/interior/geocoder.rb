@@ -20,7 +20,7 @@ module Interior
       trs    = build_trs_param(st, me, to, to_dir, ra, ra_dir, se)
       xml    = get_response_body(trs)
       result = parse_xml(xml)
-      result ? Interior::Response.new(result[:lat], result[:lon]) : nil
+      result ? Interior::Response.new(result[:lat], result[:lon], true) : Interior::Response.new
     end
 
     private
