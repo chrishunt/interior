@@ -454,8 +454,8 @@ Each meridian has a corresponding numeric key mapping:
     <td>06</td>
   </tr>
   <tr>
-    <td>WIND RIVER MER</td>
     <td>WY</td>
+    <td>WIND RIVER MER</td>
     <td>34</td>
   </tr>
 </table>
