@@ -4,17 +4,22 @@ Interior
 Township GeoCoder Web Service
 -----------------------------
 This gem uses the GeoCommunicator GeoCoder Web Service provided by the
-[US Department of the Interior](http://www.geocommunicator.gov/GeoComm/lsis_home/townshipdecoder/index.htm).
-For detailed documentation on the web service API, consult the
-[Methods, Parameters, and Results PDF](http://www.blm.gov/nils/GeoComm/documents/NILS_GeoCommunicator_Web_Services_TGC_Formats.pdf).
+[US Department of the Interior] [1]. For detailed documentation on the web service API, consult the
+[Methods, Parameters, and Results PDF] [2].
+
+[1]: http://www.geocommunicator.gov/GeoComm/lsis_home/townshipdecoder/index.htm "US Department of the Interior"
+[2]: http://www.blm.gov/nils/GeoComm/documents/NILS_GeoCommunicator_Web_Services_TGC_Formats.pdf "Methods, Parameters, and Results PDF"
 
 US Meridian Map
 ---------------
-The US is divided into several meridians. A [larger map](https://github.com/climate/interior/raw/master/maps/meridians.jpg)
-is also available for reference.
+The US is divided into several meridians. A [larger map] [3] and table are available for reference.
 
 ![USA Meridians](https://github.com/climate/interior/raw/master/maps/meridians_small.jpg "USA Meridians")
 
+[3]: https://github.com/climate/interior/raw/master/maps/meridians.jpg "Larger Map"
+
+US Meridian Table
+-----------------
 Each meridian has a corresponding numeric key mapping:
 
 <table>
