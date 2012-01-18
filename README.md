@@ -3,13 +3,10 @@ Interior
 
 Township GeoCoder Web Service
 -----------------------------
-This gem uses the GeoCommunicator GeoCoder Web Service provided by the US Department of the Interior:
-
-    http://goo.gl/lknTy
-
-For detailed documentation on the web service API, consult the Methods, Parameters, and Results PDF:
-
-    http://goo.gl/rdhsu
+This gem uses the GeoCommunicator GeoCoder Web Service provided by the
+[US Department of the Interior](http://www.geocommunicator.gov/GeoComm/lsis_home/townshipdecoder/index.htm).
+For detailed documentation on the web service API, consult the
+[Methods, Parameters, and Results PDF](http://www.blm.gov/nils/GeoComm/documents/NILS_GeoCommunicator_Web_Services_TGC_Formats.pdf).
 
 US Meridian Map
 ---------------
