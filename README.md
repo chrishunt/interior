@@ -124,57 +124,41 @@ Each meridian has a corresponding numeric key mapping:
     <td>31</td>
   </tr>
   <tr>
-    <td>CT</td>
-    <td>Connecticut</td>
-    <td>CT</td>
-    <td>DE</td>
-    <td>Delaware</td>
-    <td>DE</td>
-  </tr>
-  <tr>
     <td>FL</td>
     <td>Tallahasee</td>
     <td>29</td>
-    <td>GA</td>
-    <td>Georgia</td>
-    <td>GA</td>
-  </tr>
-  <tr>
     <td>IA</td>
     <td>5th</td>
     <td>05</td>
+  </tr>
+  <tr>
     <td>ID</td>
     <td>Boise</td>
     <td>08</td>
-  </tr>
-  <tr>
     <td>IL</td>
     <td>2nd</td>
     <td>02</td>
+  </tr>
+  <tr>
     <td>IL</td>
     <td>3rd</td>
     <td>03</td>
-  </tr>
-  <tr>
     <td>IL</td>
     <td>4th Illinois</td>
     <td>04</td>
+  </tr>
+  <tr>
     <td>IN</td>
     <td>1st</td>
     <td>01</td>
-  </tr>
-  <tr>
     <td>IN</td>
     <td>2nd</td>
     <td>02</td>
+  </tr>
+  <tr>
     <td>KS</td>
     <td>6th</td>
     <td>06</td>
-  </tr>
-  <tr>
-    <td>KY</td>
-    <td>Kentucky</td>
-    <td>KY</td>
     <td>LA</td>
     <td>Louisiana</td>
     <td>18</td>
@@ -183,62 +167,46 @@ Each meridian has a corresponding numeric key mapping:
     <td>LA</td>
     <td>St. Helena</td>
     <td>24</td>
-    <td>MA</td>
-    <td>Massachusets</td>
-    <td>MA</td>
-  </tr>
-  <tr>
-    <td>MD</td>
-    <td>Maryland</td>
-    <td>MD</td>
-    <td>ME</td>
-    <td>Maine</td>
-    <td>ME</td>
-  </tr>
-  <tr>
     <td>MI</td>
     <td>Michigan</td>
     <td>19</td>
+  </tr>
+  <tr>
     <td>MN</td>
     <td>5th</td>
     <td>05</td>
-  </tr>
-  <tr>
     <td>MN</td>
     <td>4th</td>
     <td>46</td>
+  </tr>
+  <tr>
     <td>MO</td>
     <td>5th</td>
     <td>05</td>
-  </tr>
-  <tr>
     <td>MS</td>
     <td>Chickasaw</td>
     <td>09</td>
+  </tr>
+  <tr>
     <td>MS</td>
     <td>Choctaw</td>
     <td>10</td>
-  </tr>
-  <tr>
     <td>MS</td>
     <td>Huntsville</td>
     <td>16</td>
+  </tr>
+  <tr>
     <td>MS</td>
     <td>St. Stephens</td>
     <td>25</td>
-  </tr>
-  <tr>
     <td>MS</td>
     <td>Washington</td>
     <td>32</td>
+  </tr>
+  <tr>
     <td>MT</td>
     <td>Prin</td>
     <td>20</td>
-  </tr>
-  <tr>
-    <td>NC</td>
-    <td>NO Carolina</td>
-    <td>NC</td>
     <td>ND</td>
     <td>5th</td>
     <td>05</td>
@@ -247,14 +215,6 @@ Each meridian has a corresponding numeric key mapping:
     <td>NE</td>
     <td>6th</td>
     <td>06</td>
-    <td>NH</td>
-    <td>New Hampshire</td>
-    <td>NH</td>
-  </tr>
-  <tr>
-    <td>NJ</td>
-    <td>New Jersey</td>
-    <td>NJ</td>
     <td>NM</td>
     <td>New Mex</td>
     <td>23</td>
@@ -268,73 +228,65 @@ Each meridian has a corresponding numeric key mapping:
     <td>27</td>
   </tr>
   <tr>
-    <td>NY</td>
-    <td>New York</td>
-    <td>NY</td>
     <td>OH</td>
     <td>1st</td>
     <td>01</td>
-  </tr>
-  <tr>
     <td>OH</td>
     <td>Michigan</td>
     <td>19</td>
+  </tr>
+  <tr>
     <td>OH</td>
     <td>Ohio River Survey</td>
     <td>35</td>
-  </tr>
-  <tr>
     <td>OH</td>
     <td>Between the Miamis</td>
     <td>36</td>
+  </tr>
+  <tr>
     <td>OH</td>
     <td>Muskingum River Basin</td>
     <td>37</td>
-  </tr>
-  <tr>
     <td>OH</td>
     <td>Ohio River Basin</td>
     <td>38</td>
+  </tr>
+  <tr>
     <td>OH</td>
     <td>1st Scioto River Base</td>
     <td>39</td>
-  </tr>
-  <tr>
     <td>OH</td>
     <td>2nd Scioto River Base</td>
     <td>40</td>
+  </tr>
+  <tr>
     <td>OH</td>
     <td>3rd Scioto River Base</td>
     <td>41</td>
-  </tr>
-  <tr>
     <td>OH</td>
     <td>Twelve Mile Square</td>
     <td>43</td>
+  </tr>
+  <tr>
     <td>OH</td>
     <td>West of Great Miami</td>
     <td>47</td>
-  </tr>
-  <tr>
     <td>OH</td>
     <td>US Military Survey</td>
     <td>48</td>
+  </tr>
+  <tr>
     <td>OH</td>
     <td>Ct West Res</td>
     <td>91</td>
-  </tr>
-  <tr>
     <td>OH</td>
     <td>Ohio CO Pur</td>
     <td>92</td>
-    <td>OH</td>
-    <td>Va Military Survey</td>
-    <td>93</td>
   </tr>
   <tr>
     <td>OH</td>
-    <td>Ohio</td>
-    <td>OH</td>
+    <td>Va Military Survey</td>
+    <td>93</td>
     <td>OK</td>
     <td>Cimarron</td>
     <td>11</td>
@@ -348,65 +300,33 @@ Each meridian has a corresponding numeric key mapping:
     <td>33</td>
   </tr>
   <tr>
-    <td>PA</td>
-    <td>Pennsylvania</td>
-    <td>PA</td>
-    <td>RI</td>
-    <td>Rhode Island</td>
-    <td>RI</td>
-  </tr>
-  <tr>
-    <td>SC</td>
-    <td>So Carolina</td>
-    <td>SC</td>
     <td>SD</td>
     <td>5th</td>
     <td>05</td>
-  </tr>
-  <tr>
     <td>SD</td>
     <td>6th</td>
     <td>06</td>
+  </tr>
+  <tr>
     <td>SD</td>
     <td>Black Hills</td>
     <td>07</td>
-  </tr>
-  <tr>
-    <td>TN</td>
-    <td>Tennessee</td>
-    <td>TN</td>
-    <td>TX</td>
-    <td>Texas</td>
-    <td>TX</td>
-  </tr>
-  <tr>
     <td>UT</td>
     <td>Salt Lake</td>
     <td>26</td>
+  </tr>
+  <tr>
     <td>UT</td>
     <td>Uintah Spec</td>
     <td>30</td>
-  </tr>
-  <tr>
-    <td>VA</td>
-    <td>Virginia</td>
-    <td>VA</td>
-    <td>VT</td>
-    <td>Vermont</td>
-    <td>VT</td>
-  </tr>
-  <tr>
     <td>WA</td>
     <td>Willamette</td>
     <td>33</td>
+  </tr>
+  <tr>
     <td>WI</td>
     <td>4th</td>
     <td>46</td>
-  </tr>
-  <tr>
-    <td>WV</td>
-    <td>West Virginia</td>
-    <td>WV</td>
     <td>WY</td>
     <td>6th</td>
     <td>06</td>
