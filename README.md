@@ -28,7 +28,7 @@ Section is option. If omitted, the centerpoint latitude and longitude will be fo
 the township and range:
 
     require 'interior'
-    response = Interior::Geocoder.get_lat_lon('AZ', 14, 1, 'N', 1, 'E') # No section
+    response = Interior::Geocoder.get_lat_lon('AZ', 14, 1, 'N', 1, 'E') # no section
     response.success?   => true
     response.latitude   => 33.4211630233451
     response.longitude  => -112.254699834217
