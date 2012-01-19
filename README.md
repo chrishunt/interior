@@ -69,351 +69,351 @@ Each meridian has a corresponding numeric key mapping:
   </tr>
   <tr>
     <td>AL</td>
-    <td>HUNTSVILLE MER</td>
+    <td>Huntsville</td>
     <td>16</td>
     <td>AL</td>
-    <td>ST. STEPHENS MER</td>
+    <td>St. Stephens</td>
     <td>25</td>
   </tr>
   <tr>
     <td>AL</td>
-    <td>TALLAHASEE MER</td>
+    <td>Tallahasee</td>
     <td>29</td>
     <td>AR</td>
-    <td>5TH PM</td>
+    <td>5th</td>
     <td>05</td>
   </tr>
   <tr>
     <td>AZ</td>
-    <td>GILA-SALT RIVER MER</td>
+    <td>Gila-Salt River</td>
     <td>14</td>
     <td>AZ</td>
-    <td>NAVAJO MER</td>
+    <td>Navajo</td>
     <td>22</td>
   </tr>
   <tr>
     <td>AZ</td>
-    <td>SAN BERNARDINO MER</td>
+    <td>San Bernardino</td>
     <td>27</td>
     <td>CA</td>
-    <td>GILA-SALT RIVER MER</td>
+    <td>Gila-Salt River</td>
     <td>14</td>
   </tr>
   <tr>
     <td>CA</td>
-    <td>HUMBOLDT MER</td>
+    <td>Humboldt</td>
     <td>15</td>
     <td>CA</td>
-    <td>MOUNT DIABLO MER</td>
+    <td>Mount Diablo</td>
     <td>21</td>
   </tr>
   <tr>
     <td>CA</td>
-    <td>SAN BERNARDINO MER</td>
+    <td>San Bernardino</td>
     <td>27</td>
     <td>CO</td>
-    <td>6TH PM</td>
+    <td>6th</td>
     <td>06</td>
   </tr>
   <tr>
     <td>CO</td>
-    <td>NEW MEX PM</td>
+    <td>New Mex</td>
     <td>23</td>
     <td>CO</td>
-    <td>UTE MER</td>
+    <td>Ute</td>
     <td>31</td>
   </tr>
   <tr>
     <td>CT</td>
-    <td>CONNECTICUT</td>
+    <td>Connecticut</td>
     <td>CT</td>
     <td>DE</td>
-    <td>DELAWARE</td>
+    <td>Delaware</td>
     <td>DE</td>
   </tr>
   <tr>
     <td>FL</td>
-    <td>TALLAHASEE MER</td>
+    <td>Tallahasee</td>
     <td>29</td>
     <td>GA</td>
-    <td>GEORGIA</td>
+    <td>Georgia</td>
     <td>GA</td>
   </tr>
   <tr>
     <td>IA</td>
-    <td>5TH PM</td>
+    <td>5th</td>
     <td>05</td>
     <td>ID</td>
-    <td>BOISE MER</td>
+    <td>Boise</td>
     <td>08</td>
   </tr>
   <tr>
     <td>IL</td>
-    <td>2ND PM</td>
+    <td>2nd</td>
     <td>02</td>
     <td>IL</td>
-    <td>3RD PM</td>
+    <td>3rd</td>
     <td>03</td>
   </tr>
   <tr>
     <td>IL</td>
-    <td>4TH PM ILLINOIS</td>
+    <td>4th Illinois</td>
     <td>04</td>
     <td>IN</td>
-    <td>1ST PM</td>
+    <td>1st</td>
     <td>01</td>
   </tr>
   <tr>
     <td>IN</td>
-    <td>2ND PM</td>
+    <td>2nd</td>
     <td>02</td>
     <td>KS</td>
-    <td>6TH PM</td>
+    <td>6th</td>
     <td>06</td>
   </tr>
   <tr>
     <td>KY</td>
-    <td>KENTUCKY</td>
+    <td>Kentucky</td>
     <td>KY</td>
     <td>LA</td>
-    <td>LOUISIANA MER</td>
+    <td>Louisiana</td>
     <td>18</td>
   </tr>
   <tr>
     <td>LA</td>
-    <td>ST. HELENA MER</td>
+    <td>St. Helena</td>
     <td>24</td>
     <td>MA</td>
-    <td>MASSACHUSETS</td>
+    <td>Massachusets</td>
     <td>MA</td>
   </tr>
   <tr>
     <td>MD</td>
-    <td>MARYLAND</td>
+    <td>Maryland</td>
     <td>MD</td>
     <td>ME</td>
-    <td>MAINE</td>
+    <td>Maine</td>
     <td>ME</td>
   </tr>
   <tr>
     <td>MI</td>
-    <td>MICHIGAN MER</td>
+    <td>Michigan</td>
     <td>19</td>
     <td>MN</td>
-    <td>5TH PM</td>
+    <td>5th</td>
     <td>05</td>
   </tr>
   <tr>
     <td>MN</td>
-    <td>4TH PM MN-WI</td>
+    <td>4th</td>
     <td>46</td>
     <td>MO</td>
-    <td>5TH PM</td>
+    <td>5th</td>
     <td>05</td>
   </tr>
   <tr>
     <td>MS</td>
-    <td>CHICKASAW MER</td>
+    <td>Chickasaw</td>
     <td>09</td>
     <td>MS</td>
-    <td>CHOCTAW MER</td>
+    <td>Choctaw</td>
     <td>10</td>
   </tr>
   <tr>
     <td>MS</td>
-    <td>HUNTSVILLE MER</td>
+    <td>Huntsville</td>
     <td>16</td>
     <td>MS</td>
-    <td>ST. STEPHENS MER</td>
+    <td>St. Stephens</td>
     <td>25</td>
   </tr>
   <tr>
     <td>MS</td>
-    <td>WASHINGTON MER</td>
+    <td>Washington</td>
     <td>32</td>
     <td>MT</td>
-    <td>PRIN MER, MT</td>
+    <td>Prin</td>
     <td>20</td>
   </tr>
   <tr>
     <td>NC</td>
-    <td>NO CAROLINA</td>
+    <td>NO Carolina</td>
     <td>NC</td>
     <td>ND</td>
-    <td>5TH PM</td>
+    <td>5th</td>
     <td>05</td>
   </tr>
   <tr>
     <td>NE</td>
-    <td>6TH PM</td>
+    <td>6th</td>
     <td>06</td>
     <td>NH</td>
-    <td>NEW HAMPSHIRE</td>
+    <td>New Hampshire</td>
     <td>NH</td>
   </tr>
   <tr>
     <td>NJ</td>
-    <td>NEW JERSEY</td>
+    <td>New Jersey</td>
     <td>NJ</td>
     <td>NM</td>
-    <td>NEW MEX PM</td>
+    <td>New Mex</td>
     <td>23</td>
   </tr>
   <tr>
     <td>NV</td>
-    <td>MOUNT DIABLO MER</td>
+    <td>Mount Diablo</td>
     <td>21</td>
     <td>NV</td>
-    <td>SAN BERNARDINO MER</td>
+    <td>San Bernardino</td>
     <td>27</td>
   </tr>
   <tr>
     <td>NY</td>
-    <td>NEW YORK</td>
+    <td>New York</td>
     <td>NY</td>
     <td>OH</td>
-    <td>1ST PM</td>
+    <td>1st</td>
     <td>01</td>
   </tr>
   <tr>
     <td>OH</td>
-    <td>MICHIGAN MER</td>
+    <td>Michigan</td>
     <td>19</td>
     <td>OH</td>
-    <td>OHIO RIVER SURVEY</td>
+    <td>Ohio River Survey</td>
     <td>35</td>
   </tr>
   <tr>
     <td>OH</td>
-    <td>BETWEEN THE MIAMIS</td>
+    <td>Between the Miamis</td>
     <td>36</td>
     <td>OH</td>
-    <td>MUSKINGUM RIVER BASIN</td>
+    <td>Muskingum River Basin</td>
     <td>37</td>
   </tr>
   <tr>
     <td>OH</td>
-    <td>OHIO RIVER BASIN</td>
+    <td>Ohio River Basin</td>
     <td>38</td>
     <td>OH</td>
-    <td>1ST SCIOTO RIVER BASE</td>
+    <td>1st Scioto River Base</td>
     <td>39</td>
   </tr>
   <tr>
     <td>OH</td>
-    <td>2ND SCIOTO RIVER BASE</td>
+    <td>2nd Scioto River Base</td>
     <td>40</td>
     <td>OH</td>
-    <td>3RD SCIOTO RIVER BASE</td>
+    <td>3rd Scioto River Base</td>
     <td>41</td>
   </tr>
   <tr>
     <td>OH</td>
-    <td>TWELVE MILE SQUARE</td>
+    <td>Twelve Mile Square</td>
     <td>43</td>
     <td>OH</td>
-    <td>WEST OF GREAT MIAMI</td>
+    <td>West of Great Miami</td>
     <td>47</td>
   </tr>
   <tr>
     <td>OH</td>
-    <td>US MILITARY SURVEY</td>
+    <td>US Military Survey</td>
     <td>48</td>
     <td>OH</td>
-    <td>CT WEST RES-OHIO</td>
+    <td>Ct West Res</td>
     <td>91</td>
   </tr>
   <tr>
     <td>OH</td>
-    <td>OHIO CO PUR-OHIO</td>
+    <td>Ohio CO Pur</td>
     <td>92</td>
     <td>OH</td>
-    <td>VA MILITARY SURVEY-OHIO</td>
+    <td>Va Military Survey</td>
     <td>93</td>
   </tr>
   <tr>
     <td>OH</td>
-    <td>OHIO</td>
+    <td>Ohio</td>
     <td>OH</td>
     <td>OK</td>
-    <td>CIMARRON MER</td>
+    <td>Cimarron</td>
     <td>11</td>
   </tr>
   <tr>
     <td>OK</td>
-    <td>INDIAN MER</td>
+    <td>Indian</td>
     <td>17</td>
     <td>OR</td>
-    <td>WILLAMETTE MER</td>
+    <td>Willamette</td>
     <td>33</td>
   </tr>
   <tr>
     <td>PA</td>
-    <td>PENNSYLVANIA</td>
+    <td>Pennsylvania</td>
     <td>PA</td>
     <td>RI</td>
-    <td>RHODE ISLAND</td>
+    <td>Rhode Island</td>
     <td>RI</td>
   </tr>
   <tr>
     <td>SC</td>
-    <td>SO CAROLINA</td>
+    <td>So Carolina</td>
     <td>SC</td>
     <td>SD</td>
-    <td>5TH PM</td>
+    <td>5th</td>
     <td>05</td>
   </tr>
   <tr>
     <td>SD</td>
-    <td>6TH PM</td>
+    <td>6th</td>
     <td>06</td>
     <td>SD</td>
-    <td>BLACK HILLS MER</td>
+    <td>Black Hills</td>
     <td>07</td>
   </tr>
   <tr>
     <td>TN</td>
-    <td>TENNESSEE</td>
+    <td>Tennessee</td>
     <td>TN</td>
     <td>TX</td>
-    <td>TEXAS</td>
+    <td>Texas</td>
     <td>TX</td>
   </tr>
   <tr>
     <td>UT</td>
-    <td>SALT LAKE MER</td>
+    <td>Salt Lake</td>
     <td>26</td>
     <td>UT</td>
-    <td>UINTAH SPEC MER</td>
+    <td>Uintah Spec</td>
     <td>30</td>
   </tr>
   <tr>
     <td>VA</td>
-    <td>VIRGINIA</td>
+    <td>Virginia</td>
     <td>VA</td>
     <td>VT</td>
-    <td>VERMONT</td>
+    <td>Vermont</td>
     <td>VT</td>
   </tr>
   <tr>
     <td>WA</td>
-    <td>WILLAMETTE MER</td>
+    <td>Willamette</td>
     <td>33</td>
     <td>WI</td>
-    <td>4TH PM MN-WI</td>
+    <td>4th</td>
     <td>46</td>
   </tr>
   <tr>
     <td>WV</td>
-    <td>WEST VIRGINIA</td>
+    <td>West Virginia</td>
     <td>WV</td>
     <td>WY</td>
-    <td>6TH PM</td>
+    <td>6th</td>
     <td>06</td>
   </tr>
   <tr>
     <td>WY</td>
-    <td>WIND RIVER MER</td>
+    <td>Wind River</td>
     <td>34</td>
     <td></td>
     <td></td>
