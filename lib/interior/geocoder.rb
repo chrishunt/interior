@@ -49,9 +49,9 @@ module Interior
         doc      = Nokogiri::XML(xml)
         data     = Nokogiri::XML(doc.children[0].children[5].text)
         points   = data.xpath('//georss:point').first.child.text.split
-        lon, lat = points
+        lon, lat = points == ['0', '0'] ? nil : points
 
-        { :lat => lat.to_f, :lon => lon.to_f }
+        { :lat => lat.to_f, :lon => lon.to_f } if lon && lat
       rescue
         nil # if XML is the wrong format, return nil
       end

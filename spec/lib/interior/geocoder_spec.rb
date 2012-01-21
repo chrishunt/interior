@@ -195,6 +195,15 @@ describe Interior::Geocoder do
       end
     end
 
+    # Interior web services sometimes has bad response
+    context 'when xml is invalid' do
+      let(:xml) { File.open('spec/fixtures/az_bad_response.xml').read }
+
+      it 'returns nil' do
+        subject.should == nil
+      end
+    end
+
     context 'when no xml is provided' do
       let(:xml) { nil }
 
